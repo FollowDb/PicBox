@@ -1,0 +1,1137 @@
+2013/11/06 10:15:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact.html".' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:483
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(270): CController->missingAction('contact.html')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('contact.html')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact.ht...')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /web/sites/picbox/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/contact.html
+HTTP_REFERER=http://picbox/site/page/view/about.html
+---
+2013/11/06 10:15:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact.html".' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:483
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(270): CController->missingAction('contact.html')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('contact.html')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact.ht...')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /web/sites/picbox/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/contact.html
+HTTP_REFERER=http://picbox/site/page/view/about.html
+---
+2013/11/06 11:35:55 [error] [exception.CDbException] SQLSTATE[42000] [1049] Unknown database 'blog'
+2013/11/06 11:35:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php:388
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /web/sites/yii-1.1.14.f0fee9/framework/base/CModule.php(387): CDbConnection->init()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(1595): CActiveRecord->getCommandBuilder()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(147): CListView->init()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 /web/sites/picbox/protected/views/post/index.php(9): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#20 /web/sites/picbox/protected/controllers/PostController.php(136): CController->render('index', Array)
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#29 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('')
+#31 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#32 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#33 /web/sites/picbox/index.php(11): CApplication->run()
+#34 {main}
+REQUEST_URI=/index.php
+---
+2013/11/06 11:36:13 [error] [exception.CDbException] SQLSTATE[42000] [1049] Unknown database 'blog'
+2013/11/06 11:36:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php:388
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /web/sites/yii-1.1.14.f0fee9/framework/base/CModule.php(387): CDbConnection->init()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(1595): CActiveRecord->getCommandBuilder()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(147): CListView->init()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 /web/sites/picbox/protected/views/post/index.php(9): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#20 /web/sites/picbox/protected/controllers/PostController.php(136): CController->render('index', Array)
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#29 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('index')
+#31 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('post/index')
+#32 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#33 /web/sites/picbox/index.php(11): CApplication->run()
+#34 {main}
+REQUEST_URI=/post/index.html
+HTTP_REFERER=http://picbox/site/contact.html
+---
+2013/11/06 11:36:18 [error] [exception.CDbException] SQLSTATE[42000] [1049] Unknown database 'blog'
+2013/11/06 11:36:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php:388
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /web/sites/yii-1.1.14.f0fee9/framework/base/CModule.php(387): CDbConnection->init()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(1595): CActiveRecord->getCommandBuilder()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(147): CListView->init()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 /web/sites/picbox/protected/views/post/index.php(9): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#20 /web/sites/picbox/protected/controllers/PostController.php(136): CController->render('index', Array)
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#29 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('index')
+#31 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('post/index')
+#32 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#33 /web/sites/picbox/index.php(11): CApplication->run()
+#34 {main}
+REQUEST_URI=/post/index.html
+HTTP_REFERER=http://picbox/site/page/view/about.html
+---
+2013/11/06 11:36:23 [error] [exception.CDbException] SQLSTATE[42000] [1049] Unknown database 'blog'
+2013/11/06 11:36:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php:388
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /web/sites/yii-1.1.14.f0fee9/framework/base/CModule.php(387): CDbConnection->init()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(1595): CActiveRecord->getCommandBuilder()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(111): CDataProvider->getData()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CListView.php(211): CBaseListView->init()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(147): CListView->init()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#15 /web/sites/picbox/protected/views/post/index.php(9): CBaseController->widget('zii.widgets.CLi...', Array)
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#20 /web/sites/picbox/protected/controllers/PostController.php(136): CController->render('index', Array)
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): PostController->actionIndex()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#28 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#29 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('index')
+#31 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('post/index')
+#32 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#33 /web/sites/picbox/index.php(11): CApplication->run()
+#34 {main}
+REQUEST_URI=/post/index.html
+HTTP_REFERER=http://picbox/site/contact.html
+---
+2013/11/06 12:10:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /web/sites/yii-1.1.14.f0fee9/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /web/sites/picbox/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2013/11/06 12:11:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /web/sites/yii-1.1.14.f0fee9/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /web/sites/picbox/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2013/11/06 12:11:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "g23ii".' in /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('g23ii')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /web/sites/picbox/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=g23ii
+---
+2013/11/06 12:11:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /web/sites/yii-1.1.14.f0fee9/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /web/sites/picbox/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2013/11/06 12:16:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /web/sites/yii-1.1.14.f0fee9/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /web/sites/picbox/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2013/11/06 13:20:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users".' in /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('users')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /web/sites/picbox/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/?r=users
+---
+2013/11/06 13:21:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Login Required' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/gii/GiiModule.php(177): CWebUser->loginRequired()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(CrudGenerator), Object(CInlineAction))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('code')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/crud/code')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /web/sites/picbox/index.php(11): CApplication->run()
+#6 {main}
+REQUEST_URI=/index.php?r=gii/crud/code&id=0
+HTTP_REFERER=http://picbox/index.php?r=gii/crud/index
+---
+2013/11/06 13:22:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Login Required' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/gii/GiiModule.php(177): CWebUser->loginRequired()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(CrudGenerator), Object(CInlineAction))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('code')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/crud/code')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /web/sites/picbox/index.php(11): CApplication->run()
+#6 {main}
+REQUEST_URI=/index.php?r=gii/crud/code&id=0
+HTTP_REFERER=http://picbox/index.php?r=gii/crud/index
+---
+2013/11/06 13:22:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Login Required' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CWebUser.php:394
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/gii/GiiModule.php(177): CWebUser->loginRequired()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(CrudGenerator), Object(CInlineAction))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('code')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/crud/code')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /web/sites/picbox/index.php(11): CApplication->run()
+#6 {main}
+REQUEST_URI=/index.php?r=gii/crud/code&id=1
+HTTP_REFERER=http://picbox/index.php?r=gii/crud/index
+---
+2013/11/06 13:31:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+---
+2013/11/06 13:32:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:336
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/view')
+#10 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /web/sites/picbox/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/view
+---
+2013/11/06 13:43:26 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 15:01:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/create
+---
+2013/11/06 15:02:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/index
+---
+2013/11/06 15:17:11 [error] [php] Illegal offset type in isset or empty (/web/sites/yii-1.1.14.f0fee9/framework/web/auth/CWebUser.php:812)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UsersMenu->renderInternal()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CWidget.php(244): UsersMenu->renderFile()
+#2 /web/sites/picbox/protected/components/UsersMenu.php(15): UsersMenu->render()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CPortlet.php(97): UsersMenu->renderContent()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(173): UsersMenu->run()
+#5 /web/sites/picbox/protected/views/layouts/column2.php(10): UserController->widget()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UserController->renderInternal()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(784): UserController->renderFile()
+#9 /web/sites/picbox/protected/controllers/UserController.php(128): UserController->render()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionIndex()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/index
+2013/11/06 15:28:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/index
+---
+2013/11/06 15:28:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/index
+---
+2013/11/06 15:30:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/index
+---
+2013/11/06 15:33:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/index
+---
+2013/11/06 15:55:06 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "search".' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:266
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(227): CComponent->__call('search', Array)
+#1 /web/sites/picbox/protected/views/user/admin.php(45): CActiveRecord->__call('search', Array)
+#2 /web/sites/picbox/protected/views/user/admin.php(45): User->search()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#7 /web/sites/picbox/protected/controllers/UserController.php(143): CController->render('admin', Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#19 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /web/sites/picbox/index.php(11): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user
+---
+2013/11/06 15:55:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user
+---
+2013/11/06 15:55:34 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "search".' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:266
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(227): CComponent->__call('search', Array)
+#1 /web/sites/picbox/protected/views/user/admin.php(45): CActiveRecord->__call('search', Array)
+#2 /web/sites/picbox/protected/views/user/admin.php(45): User->search()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#7 /web/sites/picbox/protected/controllers/UserController.php(143): CController->render('admin', Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#19 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /web/sites/picbox/index.php(11): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user
+---
+2013/11/06 16:02:56 [error] [php] Object of class UserController could not be converted to string (/web/sites/picbox/protected/views/layouts/column2.php:10)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(784): UserController->renderFile()
+#1 /web/sites/picbox/protected/controllers/UserController.php(128): UserController->render()
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionIndex()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/index
+2013/11/06 16:17:41 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "search".' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:266
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php(227): CComponent->__call('search', Array)
+#1 /web/sites/picbox/protected/views/user/admin.php(45): CActiveRecord->__call('search', Array)
+#2 /web/sites/picbox/protected/views/user/admin.php(45): User->search()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#7 /web/sites/picbox/protected/controllers/UserController.php(143): CController->render('admin', Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#19 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /web/sites/picbox/index.php(11): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/index
+---
+2013/11/06 17:08:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=2
+---
+2013/11/06 17:09:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /web/sites/picbox/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=2
+---
+2013/11/06 17:29:33 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.title" is not defined.' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:130
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/base/CModule.php(105): CComponent->__get('title')
+#1 /web/sites/picbox/protected/views/layouts/main.php(25): CModule->__get('title')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(206): COutputProcessor->run()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 /web/sites/picbox/protected/views/layouts/column2.php(25): CBaseController->endContent()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(784): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#13 /web/sites/picbox/protected/controllers/UserController.php(105): CController->render('update', Array)
+#14 [internal function]: UserController->actionUpdate('1')
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('update')
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/update')
+#27 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /web/sites/picbox/index.php(11): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=user/update&id=1
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 17:39:19 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "loadModel".' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:266
+Stack trace:
+#0 /web/sites/picbox/protected/controllers/SiteController.php(46): CComponent->__call('loadModel', Array)
+#1 /web/sites/picbox/protected/controllers/SiteController.php(46): SiteController->loadModel()
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('contact')
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /web/sites/picbox/index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://picbox/index.php?r=post/view&id=3&title=%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9+%D0%BF%D0%BE%D1%81%D1%82
+---
+2013/11/06 18:10:21 [error] [php] Undefined index: linkOptions (/web/sites/picbox/protected/components/views/users.php:5)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CWidget.php(244): UsersMenu->renderFile()
+#1 /web/sites/picbox/protected/components/UsersMenu.php(15): UsersMenu->render()
+#2 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CPortlet.php(97): UsersMenu->renderContent()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(173): UsersMenu->run()
+#4 /web/sites/picbox/protected/views/layouts/column2.php(11): UserController->widget()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UserController->renderInternal()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(784): UserController->renderFile()
+#8 /web/sites/picbox/protected/controllers/UserController.php(130): UserController->render()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionIndex()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/index
+2013/11/06 18:31:46 [warning] [application] Failed to set unsafe attribute "verifyCode" of "ContactForm".
+2013/11/06 18:37:14 [error] [exception.CException] exception 'CException' with message 'Property "LoginForm.name" is not defined.' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:130
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(2529): CComponent->__get('name')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(LoginForm), 'name')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'name', Array)
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(LoginForm), 'name', Array)
+#4 /web/sites/picbox/protected/views/site/contact.php(35): CActiveForm->textField(Object(LoginForm), 'name')
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('contact', Array, true)
+#9 /web/sites/picbox/protected/controllers/SiteController.php(61): CController->render('contact', Array)
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('contact')
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#16 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /web/sites/picbox/index.php(11): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/contact
+---
+2013/11/06 18:41:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "actions".' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:483
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(270): CController->missingAction('actions')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('actions')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/actions')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /web/sites/picbox/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/actions
+---
+2013/11/06 18:41:39 [error] [exception.CException] exception 'CException' with message 'Property "ContactForm.verifyCode" is not defined.' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:130
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(2529): CComponent->__get('verifyCode')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(ContactForm), 'verifyCode')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(ContactForm), 'verifyCode', Array)
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(ContactForm), 'verifyCode', Array)
+#4 /web/sites/picbox/protected/views/site/contact.php(58): CActiveForm->textField(Object(ContactForm), 'verifyCode')
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('contact', Array, true)
+#9 /web/sites/picbox/protected/controllers/SiteController.php(61): CController->render('contact', Array)
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('contact')
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#16 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /web/sites/picbox/index.php(11): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://picbox/index.php?r=site/actions
+---
+2013/11/06 18:44:00 [error] [exception.CException] exception 'CException' with message 'Property "ContactForm.verifyCode" is not defined.' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:130
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(2529): CComponent->__get('verifyCode')
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(ContactForm), 'verifyCode')
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(ContactForm), 'verifyCode', Array)
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(ContactForm), 'verifyCode', Array)
+#4 /web/sites/picbox/protected/views/site/contact.php(59): CActiveForm->textField(Object(ContactForm), 'verifyCode')
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('contact', Array, true)
+#9 /web/sites/picbox/protected/controllers/SiteController.php(61): CController->render('contact', Array)
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('contact')
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#16 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /web/sites/picbox/index.php(11): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://picbox/index.php?r=site/actions
+---
+2013/11/06 20:04:57 [error] [exception.CException] exception 'CException' with message 'CWebUser and its behaviors do not have a method or closure named "getFlashs".' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:266
+Stack trace:
+#0 /web/sites/picbox/protected/views/user/view.php(20): CComponent->__call('getFlashs', Array)
+#1 /web/sites/picbox/protected/views/user/view.php(20): CWebUser->getFlashs()
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#6 /web/sites/picbox/protected/controllers/UserController.php(56): CController->render('view', Array)
+#7 [internal function]: UserController->actionView('1')
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('view')
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/view')
+#20 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /web/sites/picbox/index.php(11): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/view&id=1
+HTTP_REFERER=http://picbox/index.php?r=user/index
+---
+2013/11/06 20:11:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:1118
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/delete')
+#10 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /web/sites/picbox/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/delete&id=1
+---
+2013/11/06 20:11:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:1118
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/delete')
+#10 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /web/sites/picbox/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/delete
+---
+2013/11/06 20:11:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:1118
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/delete')
+#10 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /web/sites/picbox/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/delete&id=1
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 20:14:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:1118
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/delete')
+#10 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /web/sites/picbox/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/delete&id=1
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 20:14:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:1118
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/delete')
+#10 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /web/sites/picbox/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/delete&id=1
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 20:14:49 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php:1118
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/delete')
+#10 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /web/sites/picbox/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=user/delete&id=1
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 20:32:35 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.buttons" is not defined.' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:173
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CWidgetFactory.php(161): CComponent->__set('buttons', Array)
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(UserController), 'zii.widgets.gri...', Array)
+#2 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /web/sites/picbox/protected/views/user/admin.php(64): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#5 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#8 /web/sites/picbox/protected/controllers/UserController.php(151): CController->render('admin', Array)
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#10 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#20 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /web/sites/picbox/index.php(11): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 20:37:47 [error] [php] call_user_func_array() expects parameter 1 to be a valid callback, no array or string given (/web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:617)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CButtonColumn.php(319): CButtonColumn->renderButton()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridColumn.php(151): CButtonColumn->renderDataCellContent()
+#2 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(616): CButtonColumn->renderDataCell()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#6 unknown(0): CGridView->renderSection()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(135): CGridView->renderContent()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(173): CGridView->run()
+#10 /web/sites/picbox/protected/views/user/admin.php(64): UserController->widget()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UserController->renderInternal()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): UserController->renderFile()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): UserController->renderPartial()
+#15 /web/sites/picbox/protected/controllers/UserController.php(151): UserController->render()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#27 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/admin
+2013/11/06 20:40:02 [error] [exception.CException] exception 'CException' with message 'Property "CButtonColumn.delete" is not defined.' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:173
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/YiiBase.php(220): CComponent->__set('delete', Array)
+#1 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(388): YiiBase::createComponent(Array, Object(CGridView))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(147): CGridView->init()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 /web/sites/picbox/protected/views/user/admin.php(62): CBaseController->widget('zii.widgets.gri...', Array)
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#10 /web/sites/picbox/protected/controllers/UserController.php(151): CController->render('admin', Array)
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#22 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /web/sites/picbox/index.php(11): CApplication->run()
+#24 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 20:40:18 [error] [exception.CException] exception 'CException' with message 'Property "CButtonColumn.button" is not defined.' in /web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:173
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/YiiBase.php(220): CComponent->__set('button', Array)
+#1 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(388): YiiBase::createComponent(Array, Object(CGridView))
+#2 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(359): CGridView->initColumns()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(147): CGridView->init()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 /web/sites/picbox/protected/views/user/admin.php(62): CBaseController->widget('zii.widgets.gri...', Array)
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require('/web/sites/picb...')
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): CBaseController->renderInternal('/web/sites/picb...', Array, true)
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): CBaseController->renderFile('/web/sites/picb...', Array, true)
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#10 /web/sites/picbox/protected/controllers/UserController.php(151): CController->render('admin', Array)
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): CController->run('admin')
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#22 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#23 /web/sites/picbox/index.php(11): CApplication->run()
+#24 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://picbox/index.php?r=user/view&id=1
+---
+2013/11/06 20:42:38 [error] [php] call_user_func_array() expects parameter 1 to be a valid callback, no array or string given (/web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:617)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CButtonColumn.php(319): CButtonColumn->renderButton()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridColumn.php(151): CButtonColumn->renderDataCellContent()
+#2 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(616): CButtonColumn->renderDataCell()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#6 unknown(0): CGridView->renderSection()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(135): CGridView->renderContent()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(173): CGridView->run()
+#10 /web/sites/picbox/protected/views/user/admin.php(64): UserController->widget()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UserController->renderInternal()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): UserController->renderFile()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): UserController->renderPartial()
+#15 /web/sites/picbox/protected/controllers/UserController.php(151): UserController->render()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#27 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/admin
+2013/11/06 20:50:27 [error] [php] call_user_func_array() expects parameter 1 to be a valid callback, no array or string given (/web/sites/yii-1.1.14.f0fee9/framework/base/CComponent.php:617)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CButtonColumn.php(319): CButtonColumn->renderButton()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridColumn.php(151): CButtonColumn->renderDataCellContent()
+#2 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(616): CButtonColumn->renderDataCell()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(572): CGridView->renderTableRow()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/grid/CGridView.php(482): CGridView->renderTableBody()
+#5 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(167): CGridView->renderItems()
+#6 unknown(0): CGridView->renderSection()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(150): preg_replace_callback()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CBaseListView.php(135): CGridView->renderContent()
+#9 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(173): CGridView->run()
+#10 /web/sites/picbox/protected/views/user/admin.php(63): UserController->widget()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UserController->renderInternal()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(869): UserController->renderFile()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(782): UserController->renderPartial()
+#15 /web/sites/picbox/protected/controllers/UserController.php(151): UserController->render()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#23 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#24 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#25 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#26 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#27 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#28 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/admin
+2013/11/06 21:00:18 [error] [php] array_merge(): Argument #1 is not an array (/web/sites/picbox/protected/components/views/users.php:5)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UsersMenu->renderInternal()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CWidget.php(244): UsersMenu->renderFile()
+#2 /web/sites/picbox/protected/components/UsersMenu.php(15): UsersMenu->render()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CPortlet.php(97): UsersMenu->renderContent()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(173): UsersMenu->run()
+#5 /web/sites/picbox/protected/views/layouts/column2.php(11): UserController->widget()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UserController->renderInternal()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(784): UserController->renderFile()
+#9 /web/sites/picbox/protected/controllers/UserController.php(56): UserController->render()
+#10 unknown(0): UserController->actionView()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/view&id=1
+2013/11/06 21:00:50 [error] [php] array_merge(): Argument #1 is not an array (/web/sites/picbox/protected/components/views/users.php:5)
+Stack trace:
+#0 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UsersMenu->renderInternal()
+#1 /web/sites/yii-1.1.14.f0fee9/framework/web/widgets/CWidget.php(244): UsersMenu->renderFile()
+#2 /web/sites/picbox/protected/components/UsersMenu.php(15): UsersMenu->render()
+#3 /web/sites/yii-1.1.14.f0fee9/framework/zii/widgets/CPortlet.php(97): UsersMenu->renderContent()
+#4 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(173): UsersMenu->run()
+#5 /web/sites/picbox/protected/views/layouts/column2.php(11): UserController->widget()
+#6 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(126): require()
+#7 /web/sites/yii-1.1.14.f0fee9/framework/web/CBaseController.php(95): UserController->renderInternal()
+#8 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(784): UserController->renderFile()
+#9 /web/sites/picbox/protected/controllers/UserController.php(56): UserController->render()
+#10 unknown(0): UserController->actionView()
+#11 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#12 /web/sites/yii-1.1.14.f0fee9/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#13 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(133): UserController->runAction()
+#15 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#16 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#17 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CInlineFilter.php(58): UserController->filterAccessControl()
+#18 /web/sites/yii-1.1.14.f0fee9/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#19 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(291): CFilterChain->run()
+#20 /web/sites/yii-1.1.14.f0fee9/framework/web/CController.php(265): UserController->runActionWithFilters()
+#21 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(282): UserController->run()
+#22 /web/sites/yii-1.1.14.f0fee9/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#23 /web/sites/yii-1.1.14.f0fee9/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /web/sites/picbox/index.php(11): CWebApplication->run()
+REQUEST_URI=/index.php?r=user/view&id=1
