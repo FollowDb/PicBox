@@ -47,6 +47,11 @@ body
 	font-size: 200%;
 }
 
+#logo a, #logo a:hover {
+        color: #555;
+        text-decoration: none;
+}
+
 #mainmenu
 {
 	background:white url(bg.gif) repeat-x left top;
@@ -56,6 +61,7 @@ body
 {
 	padding:6px 20px 5px 20px;
 	margin:0px;
+        text-align: right;
 }
 
 #mainmenu ul li

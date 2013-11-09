@@ -6,6 +6,8 @@ return array(
 	'title'=>'PicBox',
 	// this is used in error pages
 	'adminEmail'=>'3d.denis@gmail.com',
+        // images parent directory name
+        'pics_dir' => 'picbox',
 	// number of posts displayed per page
 	'postsPerPage'=>10,
 	// maximum number of comments that can be displayed in recent comments portlet

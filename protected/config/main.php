@@ -17,7 +17,9 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
+        'aliases' => array(
+            'xupload' => 'ext.xupload'
+        ),
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		
@@ -25,12 +27,12 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'root',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1', '192.168.1.2'),
+			'ipFilters'=>array('127.0.0.1','::1', '192.168.1.2', '172.16.1.9'),
 		),
 		
 	),
     
-	'defaultController'=>'post',
+	'defaultController'=>'pic',
 
 	// application components
 	'components'=>array(

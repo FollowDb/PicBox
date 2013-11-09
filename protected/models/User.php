@@ -7,10 +7,12 @@ class User extends CActiveRecord
 	 * @var integer $id
 	 * @var string $username
 	 * @var string $password
-	 * @var string $email
-	 * @var string $profile
 	 */
-
+         
+    
+         public $password_repeat;
+         
+         
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return CActiveRecord the static model class
@@ -36,13 +38,13 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email', 'required'),
-			array('username, password, email', 'length', 'max'=>128),
-			array('profile', 'safe'),
-                        array('email','email'),
+			array('username, password, password_repeat', 'required'),
+			array('username, password, password_repeat', 'length', 'max'=>128),
+                        array('username','email'),
+                        array('username','unique'),
+                        array('password_repeat', 'compare', 'compareAttribute'=>'password'),
                         // The following rule is used by search().
-                        // @todo Please remove those attributes that should not be searched.
-                        array('id, username, password, email', 'safe', 'on'=>'search'),
+                        array('id, username', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +56,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'posts' => array(self::HAS_MANY, 'Post', 'author_id'),
+			'pics' => array(self::HAS_MANY, 'Pic', 'author_id'),
 		);
 	}
 
@@ -65,10 +67,9 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'Id',
-			'username' => 'Username',
+			'username' => 'Email',
 			'password' => 'Password',
-			'email' => 'Email',
-			'profile' => 'Profile',
+			'password_repeat' => 'Repeat password',
 		);
 	}
 
@@ -92,9 +93,6 @@ class User extends CActiveRecord
 
             $criteria->compare('id',$this->id);
             $criteria->compare('username',$this->username,true);
-            $criteria->compare('password',$this->password,true);
-            $criteria->compare('email',$this->email,true);
-//            $criteria->compare('profile',$this->profile,true);
 
             return new CActiveDataProvider($this, array(
                 'criteria'=>$criteria,
@@ -120,4 +118,21 @@ class User extends CActiveRecord
 	{
 		return CPasswordHelper::hashPassword($password);
 	}
+        
+        
+        protected function beforeSave()
+        {
+             if(parent::beforeSave())
+             {
+                if($this->isNewRecord)
+                {
+                    $this->create_time = time();
+                    $this->password = $this->hashPassword($this->password);
+                }
+
+                return true;
+             }
+
+            return false;
+        }
 }

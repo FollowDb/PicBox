@@ -28,15 +28,15 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','login','reg'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('create','admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -45,6 +45,58 @@ class UserController extends Controller
 		);
 	}
 
+        
+	/**
+	 * Displays the login page
+	 */
+	public function actionLogin()
+	{
+		if (!defined('CRYPT_BLOWFISH')||!CRYPT_BLOWFISH)
+			throw new CHttpException(500,"This application requires that PHP was compiled with Blowfish support for crypt().");
+
+		$model=new LoginForm;
+
+                // Uncomment the following line if AJAX validation is needed
+                $this->performAjaxValidation($model, 'login-form');
+
+		// collect user input data
+		if(isset($_POST['LoginForm']))
+		{
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login() && !isset($_GET['ajax']))
+				$this->redirect(Yii::app()->user->returnUrl);
+		}
+		// display the login form
+                if(!isset($_GET['ajax']))
+                    $this->render('login',array('model'=>$model));
+	}
+        
+        
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionReg()
+	{
+		$model=new User;
+                $modelLogin=new LoginForm;
+
+		// Uncomment the following line if AJAX validation is needed
+		 $this->performAjaxValidation($model, 'reg-form');
+
+		if(isset($_POST['User']))
+		{
+			$modelLogin->attributes=$model->attributes=$_POST['User'];
+			if($model->save() && $modelLogin->login() && !isset($_GET['ajax']))
+                            $this->redirect(array('/pic/list'));
+		}
+
+		if(!isset($_GET['ajax']))
+                    $this->render('reg',array('model'=>$model,));
+	}
+        
+        
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -65,11 +117,10 @@ class UserController extends Controller
 		$model=new User;
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model, 'user-form');
 
 		if(isset($_POST['User']))
 		{
-                        $_POST['User']['password']=$model->hashPassword($_POST['User']['password']);
 			$model->attributes=$_POST['User'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -90,11 +141,10 @@ class UserController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model, 'user-form');
 
 		if(isset($_POST['User']))
 		{
-                        $_POST['User']['password']=$model->hashPassword($_POST['User']['password']);
 			$model->attributes=$_POST['User'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -170,9 +220,9 @@ class UserController extends Controller
 	 * Performs the AJAX validation.
 	 * @param User $model the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+        protected function performAjaxValidation($model, $form_id)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']===$form_id)
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

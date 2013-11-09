@@ -1,18 +1,13 @@
-<?php
-/* @var $this UserController */
-/* @var $model User */
-/* @var $form CActiveForm */
-?>
+<h3>Registration</h3>
+
+<p>Please fill out the following form with your login credentials:</p>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'user-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
+	'id'=>'reg-form',
 	'enableAjaxValidation'=>true,
+        'action' => Yii::app()->createUrl('user/reg'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
