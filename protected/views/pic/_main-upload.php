@@ -1,5 +1,5 @@
 <?php
-    $upId = 'XUploadForm-form';
+    $upId = get_class($model) . "-form";
     $authId = 'auth-block';
     $loginId = 'login-form';
     $regId = 'reg-form';

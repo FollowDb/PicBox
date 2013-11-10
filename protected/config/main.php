@@ -16,6 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'application.helpers.*',
 	),
         'aliases' => array(
             'xupload' => 'ext.xupload'
@@ -36,6 +37,16 @@ return array(
 
 	// application components
 	'components'=>array(
+                'image'=>array(
+                    'class'=>'application.extensions.image.CImageComponent',
+                      // GD or ImageMagick
+                      'driver'=>'GD',
+                      // ImageMagick setup path
+                      'params'=>array('directory'=>'/opt/local/bin'),
+                  ),
+                'format' => array(
+                        'dateFormat' => 'd.m.Y H:i:s'
+                ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -59,18 +70,16 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
-/*
+
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 //                        'urlSuffix'=>'.html',
                         'showScriptName' => false,
 			'rules'=>array(
-				'post/<id:\d+>/<title:.*?>'=>'post/view',
-				'posts/<tag:.*?>'=>'post/index',
 				'<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
 			),
 		),
- */
+ 
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(

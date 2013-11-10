@@ -12,7 +12,7 @@ class XUploadForm extends CFormModel
          * along with time and the user id to make it much harder for malicious users
          * to attempt to delete another user's file
         */
-        public $secureFileNames = true;
+        public $secureFileNames = false;
 
         /**
          * Declares the validation rules.
@@ -22,7 +22,7 @@ class XUploadForm extends CFormModel
         public function rules()
         {
                 return array(
-                        array('file', 'file'),
+                        array('file', 'file', 'mimeTypes'=>'image/jpeg,image/jpg,image/gif,image/png'),
                 );
         }
 

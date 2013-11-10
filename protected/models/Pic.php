@@ -31,12 +31,12 @@ class Pic extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, type, author_id', 'required'),
+			array('title, filename, type, author_id', 'required'),
 			array('create_time, author_id', 'numerical', 'integerOnly'=>true),
-			array('title, type', 'length', 'max'=>128),
+			array('title, filename, type', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, type, create_time', 'safe', 'on'=>'search'),
+			array('id, title, filename, type, create_time, author_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -86,11 +86,16 @@ class Pic extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
+		$criteria->compare('filename',$this->filename,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('create_time',$this->create_time);
+		$criteria->compare('author_id',(Yii::app()->user->id==1 ? $this->author_id : Yii::app()->user->id));
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+                        'sort'=>array(
+                            'defaultOrder'=>'id DESC',
+                        ),
 		));
 	}
 

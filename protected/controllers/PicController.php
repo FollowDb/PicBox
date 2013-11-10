@@ -28,11 +28,15 @@ class PicController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','upload','list','delete'),
+				'actions'=>array('index','upload','send'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('list','delete'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' actions
+				'actions'=>array('admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -51,6 +55,7 @@ class PicController extends Controller
                     'path' =>Yii::app() -> getBasePath() . "/..".$dir,
                     'publicPath' => Yii::app() -> getBaseUrl() . $dir,
                     'subfolderVar' => false,
+                    'secureFileNames' => true,
                 ),
             );
         }
@@ -77,27 +82,54 @@ class PicController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete($id=NULL)
 	{
-		$this->loadModel($id)->delete();
+                // Transform data into array, so that we could proccess both array and single values
+                $ids = array();
+                if(isset($_GET['ajax']) && isset($_POST[$_GET['ajax']]))
+                    $ids = $_POST[$_GET['ajax']];
+                if ($id !== NULL)
+                    $ids[]=$id;
+                foreach($ids as $i) {
+                    if ($this->loadModel($i)->author_id != Yii::app()->user->id)
+                        return false;
+                    if ($this->deleteImg($this->loadModel($i)->filename))
+                        $this->loadModel($i)->delete();
+                    else
+                        throw new Exception("Couldn't delete pictures!");
+                }
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('list'));
 	}
+        
+        protected function deleteImg($filename){
+            $path = Yii::getPathOfAlias('webroot').'/images/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name.'/';
+            $success_orig = false;
+            $success_thumb = false;
+            if (file_exists($path.'orig/'.$filename))
+                $success_orig = unlink($path.'orig/'.$filename);
+            if (file_exists($path.'thumbs/'.$filename))
+                $success_thumb = unlink($path.'thumbs/'.$filename);
+            return $success_orig & $success_thumb;
+        }
 
-	/**
+        /**
 	 * Lists all models.
 	 */
 	public function actionList()
 	{
 		$model=new Pic('search');
+                Yii::import("xupload.models.XUploadForm");
+                $modelUp = new XUploadForm;
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Pic']))
 			$model->attributes=$_GET['Pic'];
 
 		$this->render('list',array(
 			'model'=>$model,
+                        'modelUp'=>$modelUp,
 		));
 	}
         
@@ -114,6 +146,23 @@ class PicController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+        
+	/**
+	 * Manages all models.
+	 */
+	public function actionSend($id,$size_folder)
+	{
+            $model = $this->loadModel($id);
+            if ($model->author_id == Yii::app()->user->id) {
+                $file = '/images/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name.'/'.$size_folder.'/'.$model->filename;
+                if (file_exists(Yii::getPathOfAlias('webroot').$file)) {
+                    header('X-Accel-Redirect: ' . $file);
+                    header('Content-Type: '.$model->type);
+                    header('Content-Length: '.filesize($file.size));
+                    exit;
+                }
+            }
 	}
 
 	/**

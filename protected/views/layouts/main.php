@@ -28,7 +28,8 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Users', 'url'=>array('user/index'), 'visible'=>Yii::app()->user->id == 1),
+				array('label'=>'PicBox', 'url'=>array('pic/index')),
+				array('label'=>'Users', 'url'=>array('user/admin'), 'visible'=>Yii::app()->user->id == 1),
 				array('label'=>'Login', 'url'=>array('site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

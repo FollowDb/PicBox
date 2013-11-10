@@ -147,7 +147,7 @@ class XUploadAction extends CAction {
     private $_formModel;
 
     /**
-     * Initialize the propeties of pthis action, if they are not set.
+     * Initialize the propeties of this action, if they are not set.
      *
      * @since 0.1
      */
@@ -246,26 +246,38 @@ class XUploadAction extends CAction {
             $img_add = new Pic();
             $model->{$this->mimeTypeAttribute} = $img_add->type = $model->{$this->fileAttribute}->getType();
             $model->{$this->sizeAttribute} = $model->{$this->fileAttribute}->getSize();
-            $model->{$this->displayNameAttribute} = $img_add->title = $model->{$this->fileAttribute}->getName();
+            $model->{$this->displayNameAttribute} = $model->{$this->fileAttribute}->getName();
             $model->{$this->fileNameAttribute} = $model->{$this->displayNameAttribute};
+            $img_add->title = pathinfo($model->{$this->displayNameAttribute}, PATHINFO_FILENAME);
 
             if ($model->validate()) {
 
                 $path = $this->getPath();
-
-                if (!is_dir($path)) {
-                    mkdir($path, 0777, true);
-                    chmod($path, 0777);
+                if (!is_dir($path.'orig/')) {
+                    mkdir($path.'orig/', 0777, true);
+                    chmod($path.'orig/', 0777);
                 }
 
-                $model->{$this->fileAttribute}->saveAs($path . $model->{$this->fileNameAttribute});
-                chmod($path . $model->{$this->fileNameAttribute}, 0777);
+                $model->{$this->fileAttribute}->saveAs($path.'orig/' . $model->{$this->fileNameAttribute});
+                chmod($path.'orig/' . $model->{$this->fileNameAttribute}, 0777);
 
                 $returnValue = $this->beforeReturn();
                 if ($returnValue === true) {
+                    $img_add->filename=$model->{$this->fileNameAttribute};
                     $img_add->create_time=time();
                     $img_add->author_id=Yii::app()->user->id;
                     $img_add->save(); // DONE
+                    
+                    // Create thumbnails
+                    if (!is_dir($path.'thumbs/')) {
+                        mkdir($path.'thumbs/', 0777, true);
+                        chmod($path.'thumbs/', 0777);
+                    }
+                    Yii::import('application.extensions.image.Image');
+                    $image = new Image($path.'orig/' . $img_add->filename);
+                    if ($image->width > 100)
+                        $image->resize(100, NULL);
+                    $image->save($path . 'thumbs/' . $img_add->filename);
                     
                     echo json_encode(array(array(
                         "name" => $model->{$this->displayNameAttribute},
