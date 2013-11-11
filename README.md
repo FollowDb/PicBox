@@ -2,10 +2,10 @@ PicBox
 ======
 PicBox is a Yii based web application aimed to store user images.
 Main features:
-* Ajax multiloader
-* Fast registration
+* Ajax based images multiloader
 * Restricted access to images. Only the user who uploaded that image can see it, NO direct linkings.
   This feature uses Nginx X-accel technology (is commonly known as X-Sendfile).
+* Quick registration
   
 Setup instructions:
 ===
