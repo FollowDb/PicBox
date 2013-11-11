@@ -1,5 +1,4 @@
 <?php
-
 class UserController extends Controller
 {
 	/**
@@ -29,7 +28,11 @@ class UserController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('login','reg'),
-				'users'=>array('*'),
+				'users'=>array('?'),
+			),
+			array('allow',
+				'actions'=>array('logout'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('update','create','admin','delete'),
@@ -41,6 +44,15 @@ class UserController extends Controller
 		);
 	}
 
+        
+	/**
+	 * Logs out the current user and redirect to homepage.
+	 */
+	public function actionLogout()
+	{
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
+	}
         
 	/**
 	 * Displays the login page
@@ -61,11 +73,11 @@ class UserController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login() && !isset($_GET['ajax']))
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(array('/pic/list'));
 		}
 		// display the login form
                 if(!isset($_GET['ajax']))
-                    $this->render('login',array('model'=>$model));
+                        $this->render('login',array('model'=>$model));
 	}
         
         
@@ -85,11 +97,11 @@ class UserController extends Controller
 		{
 			$modelLogin->attributes=$model->attributes=$_POST['User'];
 			if($model->save() && $modelLogin->login() && !isset($_GET['ajax']))
-                            $this->redirect(array('/pic/list'));
+                                $this->redirect(array('/pic/list'));
 		}
 
 		if(!isset($_GET['ajax']))
-                    $this->render('reg',array('model'=>$model,));
+                        $this->render('reg',array('model'=>$model));
 	}
 
 	/**
@@ -101,7 +113,7 @@ class UserController extends Controller
 		$model=new User;
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model, 'user-form');
+		$this->performAjaxValidation($model, 'user-form');
 
 		if(isset($_POST['User']))
 		{
@@ -121,10 +133,7 @@ class UserController extends Controller
 	 * @param integer $id the ID of the model to be updated
 	 */
 	public function actionUpdate($id)
-	{
-                if (Yii::app()->user->id != 1 && $id != Yii::app()->user->id)
-                    return false;
-                
+	{               
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -148,18 +157,15 @@ class UserController extends Controller
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id)
-	{       
-            if ($id == '1') {
-                Yii::app()->user->setFlash('delete-admin',"You can't delete admin account!");
-                $this->redirect(array('user/view','id'=>$id));
-            }
-            else {
-		$this->loadModel($id)->delete();
-            }
+	{
+                if ($id == '1')
+                        Yii::app()->user->setFlash('delete-admin',"You can't delete admin account!");
+                else
+                        $this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+                if(!isset($_GET['ajax']))
+                        $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**

@@ -115,6 +115,8 @@ class XUpload extends CJuiInputWidget {
         $this->options['url'] = $this->url;
         $this->options['autoUpload'] = $this -> autoUpload;
 
+        
+
         if (!$this->multiple) {
             $this->options['maxNumberOfFiles'] = 1;
         }
@@ -123,14 +125,15 @@ class XUpload extends CJuiInputWidget {
 
         Yii::app() -> clientScript -> registerScript(__CLASS__ . '#' . $this -> htmlOptions['id'], "jQuery('#{$this->htmlOptions['id']}').fileupload({$options});", CClientScript::POS_READY);
         $htmlOptions = array();
-        if ($this -> multiple) {
-            $htmlOptions["multiple"] = true;
+        // If JavaScript is disabled, user will be able to choose several files, but only the last will be uploaded
+//        if ($this -> multiple) {
+//            $htmlOptions["multiple"] = true;
             /* if($this->hasModel()){
                  $this -> attribute = "[]" . $this -> attribute;
              }else{
                  $this -> attribute = "[]" . $this -> name;
              }*/
-        }
+//        }
         $htmlOptions['accept'] = $this -> accept;
 
         $this -> render($this->formView, compact('htmlOptions'));

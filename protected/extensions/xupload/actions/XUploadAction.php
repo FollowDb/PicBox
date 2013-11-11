@@ -186,11 +186,7 @@ class XUploadAction extends CAction {
      * @author Asgaroth
      */
     public function run( ) {
-        
-        if(!isset($_POST['ajax'])) {
-            Yii::app()->controller->redirect(array('index'));
-        }
-        
+               
         $this->sendHeaders();
 
         $this->handleDeleting() or $this->handleUploading();
@@ -248,7 +244,13 @@ class XUploadAction extends CAction {
             $model->{$this->sizeAttribute} = $model->{$this->fileAttribute}->getSize();
             $model->{$this->displayNameAttribute} = $model->{$this->fileAttribute}->getName();
             $model->{$this->fileNameAttribute} = $model->{$this->displayNameAttribute};
-            $img_add->title = pathinfo($model->{$this->displayNameAttribute}, PATHINFO_FILENAME);
+            
+            //resolve image name without extension, usual method (path_info) doesn't work correctly
+            $extLen = strlen($model->{$this->fileAttribute}->extensionName);
+            if ($extLen>0)
+                $img_add->title = mb_substr($model->{$this->fileNameAttribute}, 0, '-'.++$extLen,'UTF-8');
+            else 
+                $img_add->title = $model->{$this->fileNameAttribute};
 
             if ($model->validate()) {
 
@@ -276,10 +278,11 @@ class XUploadAction extends CAction {
                     Yii::import('application.extensions.image.Image');
                     $image = new Image($path.'orig/' . $img_add->filename);
                     if ($image->width > 100)
-                        $image->resize(100, NULL);
+                        $image->resize(100, 100);
                     $image->save($path . 'thumbs/' . $img_add->filename);
                     
-                    echo json_encode(array(array(
+                    if(isset($_POST['ajax']))
+                        echo json_encode(array(array(
                         "name" => $model->{$this->displayNameAttribute},
                         "type" => $model->{$this->mimeTypeAttribute},
                         "size" => $model->{$this->sizeAttribute},
@@ -292,16 +295,20 @@ class XUploadAction extends CAction {
                         "delete_type" => "POST"
                     )));
                 } else {
-                    echo json_encode(array(array("error" => $returnValue,)));
-                    Yii::log("XUploadAction: " . $returnValue, CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction");
+                    if(isset($_POST['ajax']))
+                        echo json_encode(array(array("error" => $returnValue,)));
+                        Yii::log("XUploadAction: " . $returnValue, CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction");
                 }
             } else {
-                echo json_encode(array(array("error" => $model->getErrors($this->fileAttribute),)));
-                Yii::log("XUploadAction: " . CVarDumper::dumpAsString($model->getErrors()), CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction");
+                if(isset($_POST['ajax']))
+                    echo json_encode(array(array("error" => $model->getErrors($this->fileAttribute),)));
+                    Yii::log("XUploadAction: " . CVarDumper::dumpAsString($model->getErrors()), CLogger::LEVEL_ERROR, "xupload.actions.XUploadAction");
             }
         } else {
             throw new CHttpException(500, "Could not upload file");
         }
+        if(!isset($_POST['ajax']))
+            Yii::app()->controller->redirect(array('/pic/list'));
     }
 
     /**

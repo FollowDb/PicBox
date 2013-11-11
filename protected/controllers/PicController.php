@@ -28,16 +28,12 @@ class PicController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','upload','send'),
+				'actions'=>array('index'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('list','delete'),
+				'actions'=>array('upload','list','delete','send'),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' actions
-				'actions'=>array('admin'),
-				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -48,33 +44,34 @@ class PicController extends Controller
         
         public function actions()
         {
-            $dir = '/images/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name;
-            return array(
-                'upload'=>array(
-                    'class'=>'xupload.actions.XUploadAction',
-                    'path' =>Yii::app() -> getBasePath() . "/..".$dir,
-                    'publicPath' => Yii::app() -> getBaseUrl() . $dir,
-                    'subfolderVar' => false,
-                    'secureFileNames' => true,
-                ),
-            );
+                $dir = '/imgs/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name;
+                return array(
+                        'upload'=>array(
+                                'class'=>'xupload.actions.XUploadAction',
+                                'path' =>Yii::app() -> getBasePath() . "/..".$dir,
+                                'publicPath' => Yii::app() -> getBaseUrl() . $dir,
+                                'subfolderVar' => false,
+                                'secureFileNames' => true,
+                        ),
+                );
         }
         
         
-        public function actionIndex() {
-            if (!Yii::app()->user->isGuest)
-                $this->redirect (array('list'));
-            else {
-                Yii::import("xupload.models.XUploadForm");
-                $model = new XUploadForm;
-                $modelLogin = new LoginForm;
-                $modelReg = new User;
-                $this -> render('index', array(
-                    'model' => $model,
-                    'modelLogin' => $modelLogin,
-                    'modelReg' => $modelReg,
-                ));
-            }
+        public function actionIndex() 
+        {
+                if (!Yii::app()->user->isGuest)
+                        $this->redirect (array('list'));
+                else {
+                        Yii::import("xupload.models.XUploadForm");
+                        $model = new XUploadForm;
+                        $modelLogin = new LoginForm;
+                        $modelReg = new User;
+                        $this -> render('index', array(
+                                'model' => $model,
+                                'modelLogin' => $modelLogin,
+                                'modelReg' => $modelReg,
+                        ));
+                }
         }
 
 	/**
@@ -86,37 +83,46 @@ class PicController extends Controller
 	{
                 // Transform data into array, so that we could proccess both array and single values
                 $ids = array();
-                if(isset($_GET['ajax']) && isset($_POST[$_GET['ajax']]))
-                    $ids = $_POST[$_GET['ajax']];
+                
+                // Check if we received an array of ids
+                if(isset($_POST['pic-grid']))
+                        $ids = $_POST['pic-grid'];
+                
+                // Add to array if $id is a single value
                 if ($id !== NULL)
-                    $ids[]=$id;
-                foreach($ids as $i) {
-                    if ($this->loadModel($i)->author_id != Yii::app()->user->id)
-                        return false;
-                    if ($this->deleteImg($this->loadModel($i)->filename))
-                        $this->loadModel($i)->delete();
-                    else
-                        throw new Exception("Couldn't delete pictures!");
+                        $ids[]=$id;
+                
+                foreach($ids as $i)
+                {
+                        $model = $this->loadModel($i);
+                        if ($model->author_id != Yii::app()->user->id)
+                                throw new CHttpException(403, 'You are not authorized to perform this action.');
+                        
+                        // Deleting pitures from db and file system
+                        if (!$this->deleteImg($model->filename))
+                                Yii::log("$model->filename :Hasn't been deleted!");
+                        $model->delete();
+                                
                 }
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		// if AJAX request (triggered by deletion via list grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('list'));
+			$this->redirect(array('list'));
 	}
         
         protected function deleteImg($filename){
-            $path = Yii::getPathOfAlias('webroot').'/images/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name.'/';
-            $success_orig = false;
-            $success_thumb = false;
-            if (file_exists($path.'orig/'.$filename))
-                $success_orig = unlink($path.'orig/'.$filename);
-            if (file_exists($path.'thumbs/'.$filename))
-                $success_thumb = unlink($path.'thumbs/'.$filename);
-            return $success_orig & $success_thumb;
+                $path = Yii::getPathOfAlias('webroot').'/imgs/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name.'/';
+                $success_orig = false;
+                $success_thumb = false;
+                if (file_exists($path.'orig/'.$filename))
+                        $success_orig = unlink($path.'orig/'.$filename);
+                if (file_exists($path.'thumbs/'.$filename))
+                        $success_thumb = unlink($path.'thumbs/'.$filename);
+                return $success_orig & $success_thumb;
         }
 
         /**
-	 * Lists all models.
+	 * Lists all user's pictures.
 	 */
 	public function actionList()
 	{
@@ -134,35 +140,20 @@ class PicController extends Controller
 	}
         
 	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new Pic('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Pic']))
-			$model->attributes=$_GET['Pic'];
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-        
-	/**
-	 * Manages all models.
+	 * Function to stream user's pictures with a check by user's id. 
+         * We show only those pictures which belong to the current user.
 	 */
 	public function actionSend($id,$size_folder)
 	{
-            $model = $this->loadModel($id);
-            if ($model->author_id == Yii::app()->user->id) {
-                $file = '/images/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name.'/'.$size_folder.'/'.$model->filename;
-                if (file_exists(Yii::getPathOfAlias('webroot').$file)) {
-                    header('X-Accel-Redirect: ' . $file);
-                    header('Content-Type: '.$model->type);
-                    header('Content-Length: '.filesize($file.size));
-                    exit;
+                $model = $this->loadModel($id);
+                if ($model->author_id == Yii::app()->user->id) {
+                        $file = '/imgs/'.Yii::app()->params['pics_dir'].'/'. Yii::app()->user->name.'/'.$size_folder.'/'.$model->filename;
+                        if (file_exists(Yii::getPathOfAlias('webroot').$file)) {
+                                header('X-Accel-Redirect: ' . $file);
+                                header('Content-Type: '.$model->type);
+                                exit;
+                        }
                 }
-            }
 	}
 
 	/**

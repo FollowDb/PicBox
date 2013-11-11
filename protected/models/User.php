@@ -95,7 +95,7 @@ class User extends CActiveRecord
             $criteria->compare('username',$this->username,true);
 
             return new CActiveDataProvider($this, array(
-                'criteria'=>$criteria,
+                    'criteria'=>$criteria,
             ));
         }
               
@@ -122,17 +122,15 @@ class User extends CActiveRecord
         
         protected function beforeSave()
         {
-             if(parent::beforeSave())
-             {
-                if($this->isNewRecord)
+                if(parent::beforeSave())
                 {
-                    $this->create_time = time();
-                    $this->password = $this->hashPassword($this->password);
+                        if($this->isNewRecord)
+                        {
+                                $this->create_time = time();
+                                $this->password = $this->hashPassword($this->password);
+                        }
+                        return true;
                 }
-
-                return true;
-             }
-
-            return false;
+               return false;
         }
 }

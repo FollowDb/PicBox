@@ -24,12 +24,12 @@ return array(
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		
-		'gii'=>array(
-			'class'=>'system.gii.GiiModule',
-			'password'=>'root',
-			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1', '192.168.1.2', '172.16.1.9'),
-		),
+//		'gii'=>array(
+//			'class'=>'system.gii.GiiModule',
+//			'password'=>'root',
+//			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+//			'ipFilters'=>array('127.0.0.1','::1', '192.168.1.2', '172.16.1.9'),
+//		),
 		
 	),
     
@@ -49,6 +49,7 @@ return array(
                 ),
 		'user'=>array(
 			// enable cookie-based authentication
+			'loginUrl'=>('/'),
 			'allowAutoLogin'=>true,
 		),
 //		'db'=>array(
@@ -85,7 +86,7 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'info, error, warning',
 				),
 				// uncomment the following to show log messages on web pages
 				/*

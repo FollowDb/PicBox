@@ -59,9 +59,9 @@ class Pic extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'type' => 'Type',
-			'create_time' => 'Create Time',
+			'title' => 'Image Name',
+			'type' => 'Image Type',
+			'create_time' => 'Date Created',
 			'author_id' => 'Author',
 		);
 	}
@@ -89,12 +89,12 @@ class Pic extends CActiveRecord
 		$criteria->compare('filename',$this->filename,true);
 		$criteria->compare('type',$this->type,true);
 		$criteria->compare('create_time',$this->create_time);
-		$criteria->compare('author_id',(Yii::app()->user->id==1 ? $this->author_id : Yii::app()->user->id));
+		$criteria->compare('author_id',Yii::app()->user->id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
                         'sort'=>array(
-                            'defaultOrder'=>'id DESC',
+                                'defaultOrder'=>'id DESC',
                         ),
 		));
 	}
