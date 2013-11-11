@@ -1,6 +1,6 @@
 PicBox
 ======
-PicBox is a Yii based web application to store images.
+PicBox is a Yii based web application aimed to store user images.
 Main features:
 * Ajax multiloader
 * Fast registration
