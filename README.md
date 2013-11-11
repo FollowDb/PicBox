@@ -9,17 +9,18 @@ Main features:
   
 Setup instructions:
 ===
-1) Import database dump (/protected/data/picbox.mysql.sql)
-2) Edit nginx config to use X-accel as follows: 
+* Import database dump (/protected/data/picbox.mysql.sql)
+* Edit nginx config to use X-accel as follows: 
     location ~/imgs/ {
       	internal;
     }
-3) Configure database settings (/protected/config/main.php)
+* Configure database settings (/protected/config/main.php)
 
 That's it!
 
 
 General Description:
+===
 * The format of uploaded images : JPG, PNG, GIF
 * Images are stored on the server
 * The user can view only their images
