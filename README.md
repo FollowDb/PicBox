@@ -8,6 +8,7 @@ Main features:
   This feature uses Nginx X-accel technology (is commonly known as X-Sendfile).
   
 Setup instructions:
+===
 1) Import database dump (/protected/data/picbox.mysql.sql)
 2) Edit nginx config to use X-accel as follows: 
     location ~/imgs/ {
@@ -19,12 +20,12 @@ That's it!
 
 
 General Description:
-• The format of uploaded images : JPG, PNG, GIF
-• Images are stored on the server
-• The user can view only their images
+* The format of uploaded images : JPG, PNG, GIF
+* Images are stored on the server
+* The user can view only their images
 
 Register / Log in user :
-• Registration takes place during the process of loading images - a new account is created and authenticated with credentials provided.
+* Registration takes place during the process of loading images - a new account is created and authenticated with credentials provided.
 
 User Actions:
 * View the list of downloaded images
@@ -34,7 +35,7 @@ User Actions:
 * Upload images - via AJAX uploader. Able to load multiple images at once
 
 Technical requirements:
-OS: Debian 7
-PHP: 5.4
-DB: MySQL 5.5
-Enviroment: nginx + php-fpm
+* OS: Debian 7
+* PHP: 5.4
+* DB: MySQL 5.5
+* Enviroment: nginx + php-fpm
